@@ -36,18 +36,19 @@
             min-width: 100%;
         }
         .navbar{
+            background-color: yellow;
             width: 100%;
-            height: auto;
-            padding: 1% 3% 1% 3%;
+            height: 70px;
+            padding: 0 2%;
             font-size: 1rem;
-			position: sticky;
         }
         .welcome-wrapper{
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             width: 100%;
-            height: 720px;
+            height: auto;
+            padding: 3% 0;
         }
         .welcome-wrapper .textBox h1{
             font-family: 'Distant Galaxy', sans-serif;                                      
@@ -77,24 +78,40 @@
             object-fit: cover;
             animation: float 3s infinite;
         }
-        .card-wrapper{
-            background-color: red;
+        .card-wrapper-fluid{
+            padding: 10% 15%;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: auto;
-            gap: 2%;
+            gap: 3%;
         }
         .card {
+            background-color: #e2e1d2;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
             text-align: center;
+            color: #000;
+        }
+        .card h5 {
+            font-family: "Anta", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+        .card .btn {
+            background-color: transparent;
+            border: 2px solid #ffb703;
+            color: #ffb703;
         }
         .card-img-top{
             background-color: black;
             border-radius: 50%;
-            width: 100%;
+            width: 70%;
             object-fit: cover;
         }
+
         @keyframes float {
             0% {
                 transform: translateY(0px) rotate(10deg);
@@ -104,6 +121,24 @@
             }
             100% {
                 transform: translateY(0px) rotate(10deg);
+            }
+        }
+
+        .footer-wrapper{
+            background-color: #003049;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            color: white;
+
+            .textBox{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
             }
         }
     </style>
@@ -166,7 +201,7 @@
             </div>
             <img src="Images/Bucky.jpg" alt="Bucky">
         </div>
-        <div class="card-wrapper">
+        <div class="card-wrapper-fluid">
             <div class="card" style="width: 24rem;">
                 <img src="Images/duckModel1.png" class="card-img-top" alt="Card 1">
                 <div class="card-body">
@@ -178,7 +213,7 @@
             <div class="card" style="width: 24rem;">
                 <img src="Images/duckModel1.png" class="card-img-top" alt="Card 1">
                 <div class="card-body">
-                <h5 class="card-title">Zero-Gravity with Bucky</h5>
+                <h5 class="card-title">Zero-Gravity</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="btn btn-primary">View Details</a>
                 </div>
@@ -192,7 +227,17 @@
                 </div>
             </div>
         </div>
-        <div class="footer-wrapper">       
+        <div class="footer-wrapper">   
+            <div class="textBox">
+                <p>Home</p>
+                <p>Features</p>
+                <p>Pricing</p>
+                <p>FAQs</p>
+                <p>About</p>
+            </div>
+            <div class="credits">
+                <p>&copy 2022 Company, Inc</p>
+            </div>
         </div>
     </div>
 </body>
