@@ -3,301 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Style/style.css" class="css">
+    <title>Astro Duck</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background: radial-gradient(#415a77, #000000);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            color: #f1f1f1;
-            font-family: poppins, sans-serif;
-        }
-        .container-fluid {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            height: 100%;
-            min-width: 100%;
-        }
-        .navbar{
-            background-color: rgba(23, 22, 23, 0.7);
-            width: 100%;
-            height: 70px;
-            font-size: 1rem;
-            padding: 12px 120px;
-        }
-        .welcome-wrapper{
-            background-image: url("Images/bg.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-            height: 800px;
-            padding: 3% 0;
-        }
-        .welcome-wrapper .textBox h1{
-            color: #ffb703;
-            font-family: 'Distant Galaxy', sans-serif;                                      
-            font-size: 6rem;
-        }
-        .welcome-wrapper .textBox p{
-            font-size: 1.2rem;
-            text-align: center;
-        }
-        .card-wrapper-fluid{
-            background: radial-gradient(#142636, #000000);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: auto;
-        }
-        .card-wrapper-fluid .textBox{
-            text-align: center;
-            margin: 5% 0;
-        }
-        .card-wrapper-fluid .textBox h1{
-            font-family: "Anta", sans-serif;
-            font-weight: 800;
-            font-style: normal;                                   
-            font-size: 3rem;
-        }
-        .cards {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 80%;
-            height: auto;
-            gap: 5%;
-            padding: 5% 0 10% 0;
-        }
-        .cards .card {
-            background-color: #000000;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #f1f1f1;
-            height: 500px;
-            width: 100%;
-            overflow: visible;
-            position: relative;
-            transition: all 0.5s;
-            &:hover {
-                transform: scale(1.1);
-                cursor: pointer;
-            }
-        }
-        .card .imgBox {
-            height: 50%;
-            width: 100%;
-            position: relative;
-            top: -10%; 
-        }
-        .card-box {
-            border-radius: 20px;
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .card img {
-            height: auto;
-            width: 60%;
-        }
-        #_card1, #_card2, #_card3 {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-        #_card1 {
-            background-image: url("Images/MoonBg.png");
-        }
-        #_card2 {
-            background-image: url("Images/MarsBg.jpg");
-        }
-        #_card3 {
-            background-image: url("Images/GalaxyBg.jpg");
-        }
-        .card h5 {
-            font-family: "Anta", sans-serif;
-            font-weight: 800;
-            font-style: normal;
-        }
-        .card .card-body {
-            background-color: rgb(23, 22, 23, 70%);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        .card .btn {
-            background-color: transparent;
-            border: 2px solid #ffb703;
-            color: #ffb703;
-            transition: 0.2s;
-            text-shadow: 0px 0px 16px rgba(0, 0, 0, 1);
-            &:hover {
-                background-color: #ffb703;
-                color: #f1f1f1;
-                transform: scale(1.1);
-            }
-            &:active {
-                background-color: #c79005;
-                border: 2px solid #c79005;
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .about-wrapper{
-            background-image: url("Images/bg.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .about-wrapper .textBox{
-            text-align: center;
-            width: 70%;
-            margin-bottom: 5%;
-            p {
-                margin-top: 2%;
-            }
-        }
-        .about-wrapper .textBox h1{
-            font-family: "Anta", sans-serif;
-            font-weight: 800;
-            font-style: normal;                                   
-            font-size: 2rem;
-        }
-
-        .about-wrapper .imgBox img{
-            height: 400px;
-            width: auto;
-            border-radius: 20px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-            margin: 20% 0;
-        }
-
-        .footer-wrapper{
-            background-color: rgb(23, 22, 23, 70%);
-            width: 100%;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-top: 40px;
-            color: #979899;
-
-            .textBox{
-                display: flex;
-                flex-direction: row;
-                gap: 30px;
-            }
-            .credits{
-                margin-top: 30px;
-            }
-        }
-
-        .footer-wrapper .textBox p{
-            cursor: pointer;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-
-        @media (max-width: 768px) {
-            .welcome-wrapper .textBox h1{
-                font-size: 4rem;
-                text-align: center;
-            }
-            .cards {
-                flex-direction: column;
-                gap: 5%;
-                padding: 10% 0;
-            }
-            .cards .card-box {
-                width: 80%;
-            }
-            .card {
-                height: 300px;
-                margin-bottom: 120px;
-            }
-            .card img {
-                height: auto;
-                width: 60%;
-            }
-
-            .about-wrapper .textBox{
-            text-align: center;
-            width: 70%;
-            margin-bottom: 10%;
-                p {
-                    margin-top: 2%;
-                }
-            }
-            .about-wrapper .textBox h1{
-                font-family: "Anta", sans-serif;
-                font-weight: 800;
-                font-style: normal;                                   
-                font-size: 2rem;
-            }
-
-            .about-wrapper .imgBox img{
-                height: 400px;
-                width: auto;
-                border-radius: 20px;
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-                margin: 15% 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="Style/style.css">
 </head>
 <body>
     <div class="container-fluid">
         <div class="navbar">
-            <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(23, 22, 23, 0.7);">
+            <nav class="navbar navbar-dark fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand me-auto" href="#"><img src="Images/logo.png" style="width: 40px; height: auto;"></a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -305,7 +18,7 @@
                     </button>
                     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                         <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Astro Duck</h5>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
@@ -314,26 +27,12 @@
                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
+                                    <a class="nav-link" href="#">About Bucky</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Learn more</a>
                                 </li>
                             </ul>
-                            <form class="d-flex mt-3" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-success" type="submit">Search</button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -341,11 +40,18 @@
         </div>
         
         <div class="welcome-wrapper">
-            <div class="textBox">
-                <p>Waddle through the cosmos with</p>
-                <h1>Astro Duck</h1>
-                <p>Cause who wouldn't want to go to space with a duck?</p>
+            <div class="leftSide">
+                <div class="textBox">
+                    <h1>Astro Duck</h1>
+                    <p>Waddle through the cosmos with Bucky</p>
+                    <p>Cause who wouldn't want to go to space with a duck?</p>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary btn-lg">Book Now</button>
+                    <button type="button" class="btn btn-secondary btn-lg">Learn More</button>
+                </div>
             </div>
+            <img src="Images/Bucky.jpg">
         </div>
         <div class="card-wrapper-fluid">
             <div class="textBox">
@@ -359,6 +65,7 @@
                         </div>
                         <div class="card-body">
                         <h5 class="card-title">Lunar Voyage</h5>
+                        <h2>$40,000</h2>
                         <p class="card-text">Discover the Tranquility of the Moon</p>
                         <a href="#" class="btn btn-primary">View Details</a>
                         </div>
@@ -371,6 +78,7 @@
                         </div>
                         <div class="card-body">
                         <h5 class="card-title">Martian Odyssey</h5>
+                        <h2>$80,000</h2>
                         <p class="card-text">Unravel the Mysteries of Mars</p>
                         <a href="#" class="btn btn-primary">View Details</a>
                         </div>
@@ -383,7 +91,8 @@
                         </div>
                         <div class="card-body">
                         <h5 class="card-title">Interstellar Sanctuary</h5>
-                        <p class="card-text">Live Your Astronaut Dream</p>
+                        <h2>$150,000</h2>
+                        <p class="card-text">Live Your Astronaut Dream with Bucky</p>
                         <a href="#" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
@@ -421,28 +130,8 @@
             </div>
         </div>
     </div>
-    <script>
-        const welcomeWrapper = document.querySelector('.welcome-wrapper');
-        const cardButtons = document.querySelectorAll('.cards .card .btn');
-
-        cardButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cardId = button.closest('.card').id;
-                switch (cardId) {
-                    case '_card1':
-                        welcomeWrapper.style.backgroundImage = "url('https://cdn.akamai.steamstatic.com/steam/apps/1083090/ss_3c69d1be9a4267a967053092a9c0738ed11a74d0.1920x1080.jpg?t=1649210956')";
-                        break;
-                    case '_card2':
-                        welcomeWrapper.style.backgroundImage = "url('https://www.marslifehd.com/wp-content/uploads/2017/03/header.jpg')";
-                        break;
-                    case '_card3':
-                        welcomeWrapper.style.backgroundImage = "url('https://w.forfun.com/fetch/95/95ca17243a31b21dad06e6ef6c35e6e6.jpeg')";
-                        break;
-                    default:
-                        break;
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="Script/script.js"></script>
 </body>
 </html>
